@@ -1,22 +1,61 @@
 #Snake game developed by Jacob Simmerman
+import math
+import random
 import pygame
-pygame.init()
+import tkinter as tk
+from tkinter import messagebox
 
-window = pygame.display.set_mode((500, 500))
+class cube(object):
+    rows = 20
+    w = 500
+    def __init__(self,start,dirnx=1,dirny=0,color=(255,0,0)):
+        pass
 
-pygame.display.set_caption("Snake Game")
+    def move(self, dirnx, dirny):
+        pass
 
-x = 50
-y = 50
-width = 40
-height = 60
-velocity = 5
+    def draw(self, surface, eyes=False):
+        pass
 
-run = True
-while run:
-    pygame.time.delay(100)
 
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            run = false
-pygame.quit()
+class snake(object):
+    def __init__(self, color, pos):
+        pass
+
+    def move(self):
+        pass
+
+
+    def reset(self, pos):
+        pass
+
+    def addCube(self):
+        pass
+
+
+    def draw(self, surface):
+        pass
+
+
+def drawGrid(w, rows, surface):
+    pass
+
+
+def redrawWindow(surface):
+    pass
+
+
+def randomSnack(rows, item):
+    pass
+
+
+def message_box(subject, content):
+    pass
+
+
+def main():
+    pass
+
+
+
+main()
