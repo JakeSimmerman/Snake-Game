@@ -53,6 +53,22 @@ class snake(object):
                     self.dirny = 1
                     self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
 
+        for i, c in enumerate(self.body):  # Loop through every cube in our body
+            p = c.pos[:]  # This stores the cubes position on the grid
+            if p in self.turns:  # If the cubes current position is one where we turned
+                turn = self.turns[p]  # Get the direction we should turn
+                c.move(turn[0],turn[1])  # Move our cube in that direction
+                if i == len(self.body)-1:  # If this is the last cube in our body remove the turn from the dict
+                    self.turns.pop(p)
+            else:  # If we are not turning the cube
+                # If the cube reaches the edge of the screen we will make it appear on the opposite side
+                if c.dirnx == -1 and c.pos[0] <= 0: c.pos = (c.rows-1, c.pos[1])
+                elif c.dirnx == 1 and c.pos[0] >= c.rows-1: c.pos = (0,c.pos[1])
+                elif c.dirny == 1 and c.pos[1] >= c.rows-1: c.pos = (c.pos[0], 0)
+                elif c.dirny == -1 and c.pos[1] <= 0: c.pos = (c.pos[0],c.rows-1)
+                else: c.move(c.dirnx,c.dirny)  # If we haven't reached the edge just move in our current direction
+
+
 
     def reset(self, pos):
         pass
