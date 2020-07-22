@@ -53,7 +53,7 @@ def drawGrid(w, rows, surface):
 def redrawWindow(surface):
     global rows, width
     surface.fill((0,0,0))
-    drawGrid(width, row, surface)
+    drawGrid(width, rows, surface)
     pygame.display.update()
 
 
@@ -68,12 +68,12 @@ def message_box(subject, content):
 def main():
     global width, rows
     width = 500
-    rows = 40
+    rows = 20
     window = pygame.display.set_mode((width, width))
     s = snake((255, 255, 0), (20, 20))
     flag = True
 
-    clock = pygame.time.clock()
+    clock = pygame.time.Clock()
 
     while flag:
         pygame.time.delay(50)
